@@ -1,6 +1,5 @@
 {
   "name": "X巡检+智能部署",
-  "agentId": "your-agent-id",
   "schedule": {
     "kind": "cron",
     "expr": "0 9 * * *",
@@ -10,13 +9,13 @@
   "wakeMode": "now",
   "payload": {
     "kind": "agentTurn",
-    "message": "执行 x-patrol-deploy Skill（~/.openclaw/skills/x-patrol-deploy/SKILL.md）。\n\n完整流程：\n1. 抓取 X 信息流（run-patrol.sh）\n2. 筛选分级（🔥/👀/💡）\n3. 发群聊（巡检报告）\n4. 评估🔥条目，按复杂度分类：\n   - 🟢 简单工具 → 立刻部署\n   - 🟡 需要配置 → 先装，问你要 API\n   - 🔴 复杂工具 → 生成计划，等确认\n5. 去重检查\n6. 归档 Obsidian\n7. 汇报总用时",
+    "message": "执行 x-patrol-deploy Skill（~/.openclaw/skills/x-patrol-deploy/SKILL.md）。",
     "timeoutSeconds": 3600
   },
   "delivery": {
     "mode": "announce",
     "channel": "telegram",
-    "to": "your-chat-id",
+    "to": "YOUR_GROUP_ID",
     "bestEffort": true
   }
 }
